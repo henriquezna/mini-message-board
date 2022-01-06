@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ul>
+      <% for(const message of messages) {%>
+      <li>
+        <%=message.user%>
+        <%= dateFormat(message.added, 'MM/dd/yyyy') %>
+        <br>
+        <%=message.text%>
+        <br>
+      </li>
+      <% } %>
+    </ul>
+    <a href="/new">New Post</a>
+  </body>
+</html>
